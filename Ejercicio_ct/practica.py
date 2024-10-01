@@ -8,7 +8,7 @@ edad = 18
 altura = 1.55
 programOtro = True
 
-### print(f"Hola, mi nombres es {nombre}, tengo {edad} años. Tengo una estatura de {altura}m. ¿Sabe programar en otro lenguaje? {programOtro}")
+# print(f"Hola, mi nombres es {nombre}, tengo {edad} años. Tengo una estatura de {altura}m. ¿Sabe programar en otro lenguaje? {programOtro}")
 
 #########################
 # 2. Calculadora Básica #
@@ -25,10 +25,10 @@ resta = num1 - num2
 multiplicacion = num1 * num2
 division = num1 / num2
 
-# # # print(f'>>> La suma de {num1} y {num2} es {suma:,.3f}')
-# # # print(f'>>> La resta de {num1} y {num2} es {resta:,.3f}')
-# # # print(f'>>> La multiplicación de {num1} y {num2} es {multiplicacion:,.3f}')
-# # # print(f'>>> La división de {num1} y {num2} es {division:,.3f}')
+# print(f'>>> La suma de {num1} y {num2} es {suma:,.3f}')
+# print(f'>>> La resta de {num1} y {num2} es {resta:,.3f}')
+# print(f'>>> La multiplicación de {num1} y {num2} es {multiplicacion:,.3f}')
+# print(f'>>> La división de {num1} y {num2} es {division:,.3f}')
 
 #############################
 # 3. Conversor de Unidades #
@@ -39,7 +39,7 @@ metros = float(10.46)
 convCm = metros * 100
 convKm = metros / 1000 #los ultimos valores son denotados por formula
 
-# # # print(f'{metros}m son {convCm:,.2f}cm y {convKm:,.4f}km')
+# print(f'{metros}m son {convCm:,.2f}cm y {convKm:,.4f}km')
 
 ######################
 # 4. Cálculo de Área #
@@ -51,7 +51,7 @@ pi = 3.1415
 
 area = pi * radio**2 # ** sirve para expresar que lo que viene despues es el indice (exponente)
 
-# # # print(f'Teniendo como radio: {radio}. El área del círculo es: {area:,.2f}.')
+# print(f'Teniendo como radio: {radio}. El área del círculo es: {area:,.2f}.')
 
 ######################
 # 5. Nombre Completo #
@@ -60,7 +60,7 @@ area = pi * radio**2 # ** sirve para expresar que lo que viene despues es el ind
 nombre = "Melisa"
 apellido = "Rivas"
 
-# # # print(f'{apellido}, {nombre}')
+# print(f'{apellido}, {nombre}')
 
 #############################
 # 6. Comparación de Números #
@@ -75,9 +75,9 @@ mayor = num1 > num2
 menor = num1 < num2
 igual = num1 == num2
 
-# # # input(f'{num1} es mayor a {num2}: {mayor}')
-# # # input(f'{num1} es menor a {num2}: {menor}')
-# # # input(f'{num1} es igual a {num2}: {igual}')
+input(f'{num1} es mayor a {num2}: {mayor}')
+input(f'{num1} es menor a {num2}: {menor}')
+input(f'{num1} es igual a {num2}: {igual}')
 
 ##############################
 # 7. Descuento en una Compra #
@@ -89,7 +89,7 @@ descuento = porcetaje / 100
 
 precioFinal = precio * (1 - descuento)
 
-# # # print(f'El precio final es: ${precioFinal:,.2f}')
+# print(f'El precio final es: ${precioFinal:,.2f}')
 
 #####################
 # 8. Cálculo de IMC #
@@ -100,13 +100,13 @@ alturaM = float(1.55)
 
 imc = pesoKg / alturaM**2
 
-# # # print(f'Su peso es de {pesoKg}kg y su altura de {alturaM}. Dando un IMC de: {imc:,.2f}.')
+# print(f'Su peso es de {pesoKg}kg y su altura de {alturaM}. Dando un IMC de: {imc:,.2f}.')
 
 ##########################
 # 9. Tablas de multiplicar
 ##########################
 
-numero=int(2345)
+numero=int(23.45)
 uno= numero* 1
 dos= numero* 2
 Tres=numero* 3
@@ -148,13 +148,13 @@ Monto7 = Monto6 * (1+(tasa/100))
 Monto8 = Monto7 * (1+(tasa/100))
 Monto9 = Monto8 * (1+(tasa/100))
 Monto10 = Monto9 * (1+(tasa/100))
-print(f"Monto1 es {Monto1:,.2f}")
-print(f"Monto2 es {Monto2:,.2f}")
-print(f"Monto3 es {Monto3:,.2f}")
-print(f"Monto4 es {Monto4:,.2f}")
-print(f"Monto5 es {Monto5:,.2f}")
-print(f"Monto6 es {Monto6:,.2f}")
-print(f"Monto7 es {Monto7:,.2f}")
-print(f"Monto8 es {Monto8:,.2f}")
-print(f"Monto9 es {Monto9:,.2f}")
-print(f"Monto10 es {Monto10:,.2f}")
+# print(f"Monto1 es {Monto1:,.2f}")
+# print(f"Monto2 es {Monto2:,.2f}")
+# print(f"Monto3 es {Monto3:,.2f}")
+# print(f"Monto4 es {Monto4:,.2f}")
+# print(f"Monto5 es {Monto5:,.2f}")
+# print(f"Monto6 es {Monto6:,.2f}")
+# print(f"Monto7 es {Monto7:,.2f}")
+# print(f"Monto8 es {Monto8:,.2f}")
+# print(f"Monto9 es {Monto9:,.2f}")
+# print(f"Monto10 es {Monto10:,.2f}")
