@@ -94,10 +94,7 @@ precioFinal = precio * (1 - descuento)
 #####################
 # 8. Cálculo de IMC #
 #####################
-"""
-Pide al usuario que ingrese su peso (en kg) y altura (en metros).
-Calcula el índice de masa corporal (IMC) utilizando la fórmula IMC = peso / altura².
-"""
+
 pesoKg = float(56.78)
 alturaM = float(1.55)
 
@@ -108,32 +105,56 @@ imc = pesoKg / alturaM**2
 ##########################
 # 9. Tablas de multiplicar
 ##########################
-"""
-Crear una mini aplicación tal que, muestre del 1 al 12 los resultados
-de la multiplicación por dicho número.
-Independientemente del valor ingresado, la multiplicacion sera por numero entero.
-Ejemplo: (1.14159)
->> 1 x 1 = 1
->> 1 x 2 = 2
-...
->> 1 x 11 = 11
->> 1 x 12 = 12
-"""
+
+numero=int(2345)
+uno= numero* 1
+dos= numero* 2
+Tres=numero* 3
+cuatro=numero* 4
+cinco=numero*5
+seis=numero* 6
+siete=numero * 7
+ocho=numero * 8
+nueve=numero* 9
+diez=numero*10
+once=numero*11
+doce= numero*12
+# print(f"{numero} X 1 es: {uno}")
+# print(f"{numero} X 2 es: {dos}")
+# print(f"{numero} X 3 es: {Tres}")
+# print(f"{numero} X 4 es: {cuatro}")
+# print(f"{numero} X 5 es: {cinco}")
+# print(f"{numero} X 6 es: {seis}")
+# print(f"{numero} X 7 es: {siete}")
+# print(f"{numero} X 8 es: {ocho}")
+# print(f"{numero} X 9 es: {nueve}")
+# print(f"{numero} X 10 es: {diez}")
+# print(f"{numero} X 11 es: {once}")
+# print(f"{numero} X 12 es: {doce}")
+
 #######################
 # 10. Interés compuesto
 #######################
-"""
-Suponga para un par de números (variables) deberá expresar que monto (uno de esos valores)
-será incrementado en porcentaje del segundo número [Monto1 = Monto *(1+(tasa/100))].
-Este proceso se hará de manera acumulativa por 10 veces, con 2 decimales.
 
-Ejemplo:
->> Monto= 10,423, Interés= 3
->> Monto 1 = 10,735.69
->> Monto 2 = 11,057.76
-...
->> Monto 9 = 13,599.65
->> Monto 10 = 14,007.64
-"""
-monto = 13,405.68
-interes = 87
+monto= 10423
+tasa=3
+Monto1 = monto * (1+(tasa/100))
+Monto2 = Monto1 * (1+(tasa/100))
+Monto3 = Monto2 * (1+(tasa/100))
+Monto4 = Monto3 * (1+(tasa/100))
+Monto5 = Monto4 * (1+(tasa/100))
+Monto6 = Monto5 * (1+(tasa/100))
+Monto7 = Monto6 * (1+(tasa/100))
+Monto8 = Monto7 * (1+(tasa/100))
+Monto9 = Monto8 * (1+(tasa/100))
+Monto10 = Monto9 * (1+(tasa/100))
+print(f"Monto1 es {Monto1:,.2f}")
+print(f"Monto2 es {Monto2:,.2f}")
+print(f"Monto3 es {Monto3:,.2f}")
+print(f"Monto4 es {Monto4:,.2f}")
+print(f"Monto5 es {Monto5:,.2f}")
+print(f"Monto6 es {Monto6:,.2f}")
+print(f"Monto7 es {Monto7:,.2f}")
+print(f"Monto8 es {Monto8:,.2f}")
+print(f"Monto9 es {Monto9:,.2f}")
+print(f"Monto10 es {Monto10:,.2f}")
