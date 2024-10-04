@@ -75,9 +75,9 @@ mayor = num1 > num2
 menor = num1 < num2
 igual = num1 == num2
 
-input(f'{num1} es mayor a {num2}: {mayor}')
-input(f'{num1} es menor a {num2}: {menor}')
-input(f'{num1} es igual a {num2}: {igual}')
+# input(f'{num1} es mayor a {num2}: {mayor}')
+# input(f'{num1} es menor a {num2}: {menor}')
+# input(f'{num1} es igual a {num2}: {igual}')
 
 ##############################
 # 7. Descuento en una Compra #
