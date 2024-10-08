@@ -11,7 +11,7 @@ meta = float(input('Cual es su meta de ahorro: '))
 esquema = '{}{}{}@{}'
 
 #capturando los elementos de las varibales para la creacion de un correo
-correo = nombre[0].lower() + apellido.lower() +carnet+ '@'+dominio
+correo = nombre[0:3].lower() + apellido.lower() +carnet+ '@'+dominio
 print(correo)
 
 """otra manera de hacerlo seria 

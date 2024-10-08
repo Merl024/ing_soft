@@ -8,7 +8,7 @@ edad = 18
 altura = 1.55
 programOtro = True
 
-# print(f"Hola, mi nombres es {nombre}, tengo {edad} años. Tengo una estatura de {altura}m. ¿Sabe programar en otro lenguaje? {programOtro}")
+print(f"Hola, mi nombres es {nombre}, tengo {edad} años. Tengo una estatura de {altura}m. ¿Sabe programar en otro lenguaje? {programOtro}")
 
 #########################
 # 2. Calculadora Básica #
