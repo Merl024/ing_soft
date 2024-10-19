@@ -13,8 +13,11 @@ print(alumno1.index(19))
 
 #.append() sirve para agregar elementos a variables ya existentes. Agrega
 alumnoNuevo = ['Ale', 'Lis']
+
+#Esta manera agrega como un solo valor ['ale', 'lis']
 alumnos.append(alumnoNuevo)
 
 #Otra manera
+#Esta manera agrega como si fuera concatenado 'ale', 'lis'
 alumnos += alumnoNuevo
 print(alumnos)
