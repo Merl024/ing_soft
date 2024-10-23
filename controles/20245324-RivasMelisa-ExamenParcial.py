@@ -16,7 +16,7 @@ pagoHora = [17.75, 17.5, 17.65, 16.90, 17.98, 26.15]
 #El orden que aparacen las horas de los dias es correspondiente a los nombres
 online = True
 
-while online == True:
+while online:
     #1. Crenado el menu de la interfaz
     print('\n##### Bienvenido al sistema de consulta ####')
     print('1. Consultar empleados.')
@@ -102,7 +102,12 @@ while online == True:
     
         if  buscarLast in lastNames:
             numBuscar = lastNames.index(buscarLast)
-            pagoTotal = ((dia1[numBuscar]* pagoHora[0]) + (dia2[numBuscar]* pagoHora[1])+ (dia3[numBuscar]* pagoHora[2])+ (dia4[numBuscar] * pagoHora[3])+ (dia5[numBuscar] * pagoHora[4])+ (dia6[numBuscar] * pagoHora[5]))
+            pagoTotal = ((dia1[numBuscar]* pagoHora[0]) + 
+                         (dia2[numBuscar]* pagoHora[1]) + 
+                         (dia3[numBuscar]* pagoHora[2]) + 
+                         (dia4[numBuscar] * pagoHora[3]) + 
+                         (dia5[numBuscar] * pagoHora[4]) + 
+                         (dia6[numBuscar] * pagoHora[5]))
             print(f'El empleado {names[numBuscar]} {lastNames[numBuscar]} recibe un pago total de ${pagoTotal:,.2f}')
         else:
             print("Ese nombre no existe. Agregalo y regresa pronto")
@@ -115,6 +120,5 @@ while online == True:
     #Asegurandonos que el usuario sepa que tiene que ingresar un numero del 1 al 5
     else:
         print('¡Cuidado! Ingrese un numero dentro de 1 - 5.')
-
 
 
