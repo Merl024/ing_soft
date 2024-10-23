@@ -18,7 +18,25 @@ while online:
         online = False
     elif opcion == 1:
         if len(people) > 0:
-            for n in range(len(people)):
-                print(str(n+1)+ ". " + people[n]+ " - " + str(ages[n]))
+        #     # Esta es una manera de resolverlo #
+        #     for n in range(len(people)):
+        #     print(str(n+1)+ ". " + people[n]+ " - " + str(ages[n]))
+
+        #     # Esta es otra manera de resolverlo #
+        #     #El enumarate enumera cada uno de los objetos (Los valores que estan dentro de las listas)
+        #     #El enumarate imprime el indice y el objeto.
+        #     for index,name in enumerate(people):
+        #     # Se le suma uno porque los indices empiezan desde 0 y se le suma el uno para que, cuando lo imprima, 
+        #     # empiece a enumerar desde 1
+        #         print(index+1, name)
+
+        
+            contador = 0
+            #zip es agarrar dos listas y que se comporten como una
+            for n,a in zip(people, ages):
+            #Donde n es el nombre que esta dentro de people y a son las edades de ages
+                contador += 1
+                print(f'{contador}. {n} {a}')
+
         else: 
             print('No hay registros')
