@@ -4,6 +4,10 @@ online = True
 person = []
 people = ["Juan", 'Maria', 'Sebastian', 'Marta']
 ages = [23, 21, 20, 19]
+p1 = ['Juan', 23]
+p2 = ['Maria', 21]
+p3 = ['Sebastian', 20]
+p4 = ['Marta', 19]
 
 # Las triples comillas sirve para escribir textos de mas de una linea
 menu = """ Elija una de las siguiente opciones
