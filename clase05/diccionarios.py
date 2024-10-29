@@ -15,6 +15,10 @@ print(people['nombre'])
 print(people['edad'])
 print(people['direccion'])
 
+nombre = input().capitalize()
+personas = {'nommbre': nombre}
+
+print(personas)
 #Va a tirar error porque los diccionarios NO TIENEN INDICE, tienen claves
 #print(people[0])
 
@@ -22,3 +26,23 @@ print(people['direccion'])
 people['Perros']= ['Candy', 'Thiago', 'Princess']
 print(people)
 print(people['direccion'])
+
+
+clientes = [
+    {"Nombre": "Juan", "Apellido": "Perez"},
+    {"Nombre": "Ana", "Apellido": "Garcia"},
+    {"Nombre": "Luis", "Apellido": "Lopez"}
+]
+
+apellido_a_buscar = "Garcia"
+posicion = -1  # Se inicializa en -1 para indicar si no se encuentra
+
+for i, cliente in enumerate(clientes):
+    if cliente["Apellido"] == apellido_a_buscar:
+        posicion = i
+        break  # Se detiene el bucle cuando se encuentra el elemento
+
+if posicion != -1:
+    print(f"El cliente con apellido {apellido_a_buscar} está en la posición {posicion}.")
+else:
+    print(f"No se encontró un cliente con el apellido {apellido_a_buscar}.")
