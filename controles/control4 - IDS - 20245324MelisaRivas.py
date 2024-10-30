@@ -63,52 +63,59 @@ detallePedido = []
 
 while online:
   print(menu)
-  eleccion = int(input('¿Qué desea hacer?: \n'))
+  eleccion = input('¿Qué desea hacer?: \n')
   
-  if eleccion == 1:
+  if eleccion == '1':
     print('\n#### Seccion de crear un pedido ####')
     nombre = input('Escriba su primer nombre: ').capitalize()
     apellido = input('Escriba su primer apellido: ').capitalize()
     detalle = True
 
     print('#### Sus datos han sido ingresados ####\n')
-    while detalle: 
-      print(codigo)
-      pedido = input('Digite su opcion.\n# Presione 5 para regresar al menú # \t').upper()
+    while detalle:
+      for i, c in enumerate(codigo):
+        print(f"{c} - {producto[i]}")
+      pedido = input('Digite su opcion.\n# Presione S para regresar al menú # \t').upper()
       
       usuario = {"Nombre": nombre, "Apellido": apellido, 'Detalle': detallePedido}      
 
       if pedido in codigo:
         detallePedido.append(pedido)
         print(f'Sus datos son {usuario["Nombre"]} {usuario["Apellido"]}, {usuario["Detalle"]}.\n')
+      elif pedido == 'S':
+        detalle = False
+        detallePedido = []
       else:
         print('Ingrese un codigo disponible. \n')
 
-      if pedido == '5':
-        detalle = False
-        detallePedido = []
-
     clientes.append(usuario)
 
-  elif eleccion == 2:
-    buscar = input('\nConsulta de pedido. \nIngrese el apellido del pedido que desea buscar: ').capitalize()
-    encontrado = False
+  elif eleccion == '2':
+    encontrado = True
 
-    for cliente in clientes:
-      if cliente['Apellido'] == buscar:
-        encontrado = True
-        total = 0
+    while encontrado:
+      buscar = input('\nConsulta de pedido. \nIngrese el apellido del pedido que desea buscar: ').capitalize()
+      
+      for cliente in clientes:
+        if cliente['Apellido'] == buscar:
+          encontrado = False
+          total = 0
 
-        for p in cliente['Detalle']:
-          indice = codigo.index(p)
-          print(f'- {producto[indice]}')
-          total += precio[indice]
+          print(f'Nombre: {cliente['Nombre']}\nApellido: {cliente['Apellido']}\nPedido:')
 
-        print(f'TOTAL: ${total:,.2f}\n')
+          for p in cliente['Detalle']:
+            indice = codigo.index(p)
+            print(f'- {producto[indice]}')
+            total += precio[indice]
 
-    if not encontrado:
-      print('Cliente no encontrado. \n')
+          print(f'TOTAL: ${total:,.2f}\n')
 
-  elif eleccion == 3:
+        else:
+          print('Cliente no encontrado. \n')
+
+  elif eleccion == '3':
     print('¡Vuelve pronto!')
     online = False
+  
+  else:
+    print('Digito no válido.\n')
