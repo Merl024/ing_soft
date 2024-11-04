@@ -42,6 +42,7 @@ class AdivinaElAnimal:
         self.root = root
         self.root.title("Juego de Adivinanza de Animales")
         self.root.geometry("555x555")
+        self.root.configure(bg = 'LightSkyBlue1')
         self.usuario = ""
         self.nivel_actual = 0
         self.puntaje_total = 0
@@ -53,7 +54,7 @@ class AdivinaElAnimal:
         self.intentos_fallidos = 0
         self.puntajes_usuarios = {}
 ##############################################################################################################################
-# Aqui se crea la clase, las funcion inicial del juego, y se crea las variables usadas dentro del juego dentro de la clase ###
+# Aqui se crea la clase, las funcion inicial del juego, y se crean las variables usadas dentro del juego dentro de la clase ##
 ##############################################################################################################################
 ##############################################################################################################################
 # crear funcion para crear interfaz inicio
@@ -66,49 +67,61 @@ class AdivinaElAnimal:
 
 # crear etiqueta para ingresar nombre de usuario
         self.frame_inicio = tk.Frame(self.root,
-                                     bg="SteelBlue4" ,
-                                     width=500, 
-                                     height=500,
-                                     padx=150, 
-                                     pady=150)
+                                    bg="LightSkyBlue1" ,
+                                    width=500, 
+                                    height=500,
+                                    padx=150, 
+                                    pady=150)
         self.frame_inicio.pack()
 
         tk.Label(self.frame_inicio, 
                  text="Ingrese su nombre:", 
-                 bg="cyan4",
+                 bg="LightSkyBlue1",
+                 fg="DeepSkyBlue4",
                  border=4,
-                 font=("Times New Roman", 12),
+                 font=("Verdana", 16, "bold"),
                  width=30).pack(pady=10)
         self.entry_usuario = tk.Entry(self.frame_inicio, 
-                                      background="LightSteelBlue1",
-                                      border=4 ,
-                                      foreground="black", 
-                                      width=30, 
-                                      font=("Times New Roman", 12))
+                                    background="white",
+                                    border=4 ,
+                                    foreground="black", 
+                                    width=30, 
+                                    font=("verdana", 16),
+                                    justify='center'
+                                    )
         
         self.entry_usuario.pack(pady=10)
 # crear boton para comenzar nuevo juego
         btn_nuevo_juego = tk.Button(self.frame_inicio, 
                                     text=" Nuevo Juego", 
                                     command=self.nuevo_juego, 
-                                    border=4, 
-                                    width=30 ) 
-        btn_nuevo_juego.pack(pady=10)
+                                    fg='white',
+                                    bg='deepskyblue3',
+                                    font = ('verdana', 9, 'bold'),
+                                    border=4,
+                                    width=20) 
+        btn_nuevo_juego.pack(pady=7)
 # crear boton para mostrar instrucciones
         btn_instrucciones = tk.Button(self.frame_inicio, 
-                                      text="Instrucciones", 
-                                      command=self.mostrar_instrucciones, 
-                                      border=4, 
-                                      width=30)
-        btn_instrucciones.pack(pady=10)
+                                    text="Instrucciones", 
+                                    command=self.mostrar_instrucciones, 
+                                    fg='white',
+                                    bg='deepskyblue3',
+                                    font = ('verdana', 9, 'bold'),
+                                    border=4, 
+                                    width=20)
+        btn_instrucciones.pack(pady=7)
 
 # crear boton para ver puntuacion
         btn_puntuacion = tk.Button(self.frame_inicio, 
                                    text="Ver Puntuación", 
                                    command=self.mostrar_puntuacion, 
+                                   fg='white',
+                                   bg='deepskyblue3',
+                                   font = ('verdana', 9, 'bold'),
                                    border=4,
-                                   width=30)
-        btn_puntuacion.pack(pady=10)
+                                   width=20)
+        btn_puntuacion.pack(pady=7)
         
 
 
@@ -177,21 +190,21 @@ class AdivinaElAnimal:
                 border=4,
                 foreground="black", 
                 width=50, 
-                font=("Times New Roman", 11)
+                font=("verdana", 11)
                  ).pack(pady=10)
         tk.Label(self.frame_juego, text=f"Pista: {self.pista_actual}",
                 background="lightblue1",
                 border=4,
                 foreground="black", 
                 width=50, 
-                font=("Times New Roman", 11)
+                font=("verdana", 11)
                  ).pack(pady=10)
         self.lbl_palabra_oculta = tk.Label(self.frame_juego, text=' '.join(self.palabra_oculta) ,
                                            background="seagreen1",
                                            border=4 ,
                                            foreground="black", 
                                            width=50, 
-                                           font=("Times New Roman", 11))
+                                           font=("verdana", 11))
         self.lbl_palabra_oculta.pack(pady=10)
 
 # crear etiqueta para mostrar vidas restantes
@@ -200,7 +213,7 @@ class AdivinaElAnimal:
                                   border=4,
                                   foreground="black", 
                                   width=50, 
-                                  font=("Times New Roman", 11))
+                                  font=("verdana", 11))
         self.lbl_vidas.pack(pady=10)
 
         self.entry_letra = tk.Entry(self.frame_juego,
@@ -208,7 +221,7 @@ class AdivinaElAnimal:
                                     border=4,
                                     foreground="black", 
                                     width=50, 
-                                    font=("Times New Roman", 11))
+                                    font=("verdana", 11))
         self.entry_letra.pack(pady=10, 
                               padx=50, 
                               )
@@ -217,7 +230,7 @@ class AdivinaElAnimal:
                                  border=4,
                                  foreground="black", 
                                  width=50, 
-                                 font=("Times New Roman", 11),
+                                 font=("verdana", 11),
                                 )
         btn_adivinar.pack(pady=10)
 # crear funcion para adivinar letra
