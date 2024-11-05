@@ -53,13 +53,14 @@ class AdivinaElAnimal:
         self.palabra_oculta = []
         self.intentos_fallidos = 0
         self.puntajes_usuarios = {}
-        self.corazones = '♡ '
+        self.crear_interfaz_instrucciones()
 ##############################################################################################################################
 # Aqui se crea la clase, las funcion inicial del juego, y se crean las variables usadas dentro del juego dentro de la clase ##
 ##############################################################################################################################
 ##############################################################################################################################
 # crear funcion para crear interfaz inicio
         self.crear_interfaz_inicio()
+
 # crear interfaz inicio
     def crear_interfaz_inicio(self):
 
@@ -106,7 +107,7 @@ class AdivinaElAnimal:
 # crear boton para mostrar instrucciones
         btn_instrucciones = tk.Button(self.frame_inicio, 
                                     text="Instrucciones", 
-                                    command=self.mostrar_instrucciones, 
+                                    command=self.crear_interfaz_instrucciones, 
                                     fg='white',
                                     bg='deepskyblue3',
                                     font = ('verdana', 9, 'bold'),
@@ -125,9 +126,72 @@ class AdivinaElAnimal:
                                    width=20)
         btn_puntuacion.pack(pady=7)
 # crear funcion para mostrar instrucciones
-    def mostrar_instrucciones(self):
+    def crear_interfaz_instrucciones(self):
+        for widget in self.root.winfo_children():
+            widget.destroy()
+        
+        # crear etiqueta para mostrar instrucciones
+        self.frame_instrucciones = tk.Frame(self.root,
+                                            bg="LightSkyBlue1" ,
+                                            width=500, 
+                                            height=500,
+                                            padx=150, 
+                                            pady=150)
+        self.frame_instrucciones.pack()
+        
+        tk.Label(self.frame_instrucciones,
+                 text='Instrucciones',
+                 font=('verdana', 18, 'bold'),
+                 bg="LightSkyBlue1",
+                 fg="DeepSkyBlue4",
+                 justify='center'
+                 ).pack(pady=10)
 
+        tk.Label(self.frame_instrucciones, 
+                 text="""
+                - En cada uno de los niveles tendrás una pista y cinco vidas. 
+                - Tendrás que adivinar cada una de las letras una a la vez.
+                - Si no adivinas la letra perderás una vida.
+                - Por cada acierto obtendrás un puntaje. 
+                - El juego terminará cuando se acaban las vidas o se completen los niveles.""", 
+                 bg="LightSkyBlue1",
+                 fg="DeepSkyBlue4",
+                 justify='left',
+                 font=('verdana', 16)
+                 ).pack(pady=10)
+        
+        tk.Label(self.frame_instrucciones,
+                 text='¡¡A divertirse!!',
+                 font=('verdana', 15, 'bold'),
+                 bg="LightSkyBlue1",
+                 fg="DeepSkyBlue4",
+                 justify='center'
+                 ).pack(pady=10)
+        
+        #Boton para regresar al inicio dentro del fram de las instrucciones 
+        btn_regresar_inicio = tk.Button(self.frame_instrucciones, 
+                                    text="Regresar al inicio", 
+                                    command=self.crear_interfaz_inicio, 
+                                    fg='white',
+                                    bg='deepskyblue3',
+                                    font = ('verdana', 9, 'bold'),
+                                    border=4,
+                                    width=20) 
+        btn_regresar_inicio.pack(pady=7)
+
+        #Boton dentro las instrucciones para continuar en el juego
+        btn_continuar = tk.Button(self.frame_instrucciones, 
+                            text="Continuar", 
+                            command=self.nuevo_juego, 
+                            fg='white',
+                            bg='deepskyblue3',
+                            font = ('verdana', 9, 'bold'),
+                            border=4,
+                            width=20)
+        btn_continuar.pack(pady=7)
+    def mostrar_mini_instrucciones(self):
         messagebox.showinfo("Instrucciones", "Adivina el animal letra por letra. Tienes 5 vidas por palabra.")
+
 # crear funcion para mostrar puntuacion
     def mostrar_puntuacion(self):
         puntuacion_texto = "Puntuación de usuarios:\n"
@@ -146,7 +210,8 @@ class AdivinaElAnimal:
     def nuevo_juego(self):
         self.usuario = self.entry_usuario.get()
         if self.usuario:
-            self.mostrar_instrucciones()
+            self.crear_interfaz_instrucciones()
+            #self.mostrar_mini_instrucciones()
             self.nivel_actual = 1
             self.puntaje_total = 0
             self.palabras_usadas = []
@@ -281,7 +346,7 @@ class AdivinaElAnimal:
 
         messagebox.showinfo("Juego Terminado", f"Juego terminado, regresando al menú de inicio")
         self.crear_interfaz_inicio()
-    
+
 
 # ejecutar el juego
 if __name__ == "__main__":
