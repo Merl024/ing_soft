@@ -7,4 +7,8 @@ operaciones(valor1)
 
 def division(a,b):
     return a/b
-print(division(24,4))
+print(f'El resultado de la division es: {division(24,4)}')
+
+"""Calcular segun la tala de ley de renta
+calcular el porcentaje 
+el monto por el porcentaje. sin inputs"""
