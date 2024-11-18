@@ -17,6 +17,9 @@ class Perros:
     alegre = True
     nombre = ""
 
+    def ladrar(self):
+        print(f'El perro {self.nombre} dice Guau')
+
     
 perro01 = Perros()    # para cambiarlo puede ser: perro01.nombre = "Luis"
 perro02 = Perros()
@@ -24,10 +27,14 @@ perro02 = Perros()
 perro01.nombre = "Firulais"
 perro02.nombre = "Ambulancia"
 
-print(perro01.patas)
-print(perro01.alegre)
-print(perro01.nombre)
+# print(perro01.patas)
+# print(perro01.alegre)
+# print(perro01.nombre)
 
-print(perro02.patas)
-print(perro02.alegre)
-print(perro02.nombre)
+# print(perro02.patas)
+# print(perro02.alegre)
+# print(perro02.nombre)
+
+perro01.ladrar()
+
+

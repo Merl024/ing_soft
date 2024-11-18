@@ -38,7 +38,7 @@ apellidos = []
 carnets = []
 edades = []
 frutaFavs = []
-# alumnos = [nombres, apellidos, carnet, edad, frutaFav]
+alumnos = [nombres, apellidos, carnets, edades, frutaFavs]
 
 while online == True:
     #Haciendo que escoga a que parte del menu quiere ingresar
@@ -48,6 +48,7 @@ while online == True:
     print('3. Borrar alumno existente')
     print('4. Consultar alumno existente')
     print('5. Salir del sistema.')
+    print('6. Consultar datos existentes')
     eleccion = int(input('Ingrese un numero del 1 a 5: '))
 
     if eleccion == 1:
@@ -130,6 +131,13 @@ while online == True:
             print('La informacion es la siguiente: ')
             print(nombres[posicionBuscar], apellidos[posicionBuscar], carnets[posicionBuscar], edades[posicionBuscar], frutaFavs[posicionBuscar])
 
+    elif eleccion == 6:
+        if len(nombres) > 0 :
+            print('Datos existentes:')
+            for idx,(n, a, c, e, f) in enumerate(zip(nombres, apellidos, carnets, edades, frutaFavs)):
+                print(f'{idx+1}. Nombre: {n}, Apellido: {a}, Carnet: {c}, Edad: {e}, Fruta Favorita: {f}')
+        elif len(nombres) <= 0:
+            print('No hay registros')
     elif eleccion == 5:
         print('Saliendo de la aplicacion')
         online = False
